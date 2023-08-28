@@ -1,0 +1,44 @@
+:root {
+  --yellow: #dae36b;
+  --blue: #6cb5e3;
+  --pink: #f3657f;
+  --green: #7fcdbb;
+  --background: #222222;
+  --dark-blue: rgba(100, 100, 255, 1);
+  --dark-blue-o: rgba(100, 100, 255, 0.5);
+  --dark: #222222;
+  --text-color: white;
+  --max-width: 1024px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: var(--dark);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  animation: fadein 0.5s; 
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+@keyframes fadein {
+  0% {
+      opacity: 0.5;
+  }
+  100% {
+      opacity: 1;
+  }
+}
