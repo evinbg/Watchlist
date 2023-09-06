@@ -6,7 +6,7 @@ export const EntryContainer = styled.div`
     margin-left: auto;
     margin-right: auto;
     background-color: var(--green);
-    height: 420px;
+    height: 430px;
     width: 700px;
     border-radius: 20px;
 `;
@@ -113,5 +113,5 @@ export const EntryButtonContainer = styled.div`
     align-items: center;
     height: 40px;
     width: 100px;
-    margin: 20px;
+    margin: 30px;
 `;
