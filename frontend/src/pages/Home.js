@@ -1,29 +1,16 @@
-import SearchBar from '../components/SearchBar/SearchBar'
+import Entry from '../components/Entry/Entry'
 import {
   HomeContainer,
-  HomeSlideshowContainer,
-  HomeSlideshow,
-  HomeHeader1,
-  HomeHeader2,
-  HomeSearchContainer
+  HomeHeader1
 } from "./HomeElements";
 
 function Home() {
   return (
     <HomeContainer>
-      <HomeSlideshowContainer>
-        <HomeSlideshow>
-        </HomeSlideshow>
-      </HomeSlideshowContainer>
         <HomeHeader1>
-          This website is a WIP
+          Add to your watchlist
         </HomeHeader1>
-        <HomeHeader2>
-          :)
-        </HomeHeader2>
-        <HomeSearchContainer>
-          <SearchBar />
-        </HomeSearchContainer>
+        <Entry />
     </HomeContainer>
   );
 }

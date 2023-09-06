@@ -29,7 +29,7 @@ export const HomeHeader1 = styled.h1`
     justify-content: center;
     font-weight: 600;
     color: var(--text-color);
-    margin-top: 100px;
+    margin-top: 150px;
 `;
 
 export const HomeHeader2 = styled.h2`

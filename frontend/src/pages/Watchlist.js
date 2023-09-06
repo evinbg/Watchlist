@@ -16,6 +16,11 @@ function Watchlist() {
             <ItemComponent />
             <ItemComponent />
             <ItemComponent />
+            <ItemComponent />
+            <ItemComponent />
+            <ItemComponent />
+            <ItemComponent />
+            <ItemComponent />
           </WatchlistObjectContainer>
           <WatchlistBottomMargin>
           </WatchlistBottomMargin>
