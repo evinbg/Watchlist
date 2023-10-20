@@ -12,8 +12,31 @@ import {
     ITEdit,
     ITDelete
   } from "./ItemComponentElements";
+  import axios from '../../axios';
   
-  function ItemComponent() {
+  function ItemComponent(watchlistData, {fetchData}) {
+    
+    const updateTitle = async (id) => {
+        try {
+            const response = await axios.put(`/watchlist/${id}`, {id});
+            window.location.reload();
+            return response.data.json
+        } catch (err) {
+            console.error(err.message);
+        }
+    }
+    
+
+    const deleteItem = async (id) => {
+        try {
+            const response = await axios.delete(`/watchlist/${id}`, {id});
+            window.location.reload();
+            return response.data.json
+        } catch (err) {
+            console.error(err.message);
+        }
+    }
+
       return (
         <IT>
             {/* <ITImgContainer>
@@ -22,27 +45,27 @@ import {
             <ITInfoContainer>
                 <ITTitleElement>
                     <b>Title:</b><br/>&nbsp;
-                    This is a Cool Show Title
+                    {watchlistData.watchlistData.title}
                 </ITTitleElement>
                 <ITInfoFormatter>
                     <ITInfoElement>
                         <b>Episodes:</b><br/>&nbsp;
-                        7 / 12
+                        {watchlistData.watchlistData.episodeOn} / {watchlistData.watchlistData.episodeTotal}
                     </ITInfoElement>
                     <ITInfoElement>
                         <b>Status:</b><br/>&nbsp;
-                        Watching
+                        {watchlistData.watchlistData.status}
                     </ITInfoElement>
                     <ITInfoElement>
                     <b>Score:</b><br/>&nbsp;
-                        7 / 10
+                        {watchlistData.watchlistData.score} / 10
                     </ITInfoElement>
                 </ITInfoFormatter>
                 <ITButtons>
-                    <ITEdit>
+                    <ITEdit onClick={() => updateTitle(watchlistData.watchlistData._id)}>
                         Edit
                     </ITEdit>
-                    <ITDelete>
+                    <ITDelete onClick={() => deleteItem(watchlistData.watchlistData._id)}>
                         Delete
                     </ITDelete>
                 </ITButtons>

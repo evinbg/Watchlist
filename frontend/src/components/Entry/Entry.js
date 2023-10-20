@@ -10,22 +10,49 @@ import {
     EntrySubmit
 } from "./EntryElements";
 
-function Entry() {
+function Entry({input, setInput, addWatchlist}) {
+    const handleInput = (e) => {
+        setInput({
+            ...input,
+          [e.target.name]: e.target.value,
+        });
+    }
+
   return (
     <EntryContainer>
         <EntryItem>
             <EntryName>Title:</EntryName>
-            <EntryText></EntryText>
+            <EntryText 
+            name="title"
+            type="text" 
+            role="input" 
+            defaultValue={input.title} 
+            onChange={handleInput}>
+            </EntryText>
         </EntryItem>
         <EntryItem>
             <EntryName>Episodes:</EntryName>
-            <EntryTextSmall></EntryTextSmall>
+            <EntryTextSmall 
+            name="episodeOn"
+            type="number" 
+            role="input"
+            defaultValue={input.episodeOn} 
+            onChange={handleInput}>
+            </EntryTextSmall>
             <EntryDivider>/</EntryDivider>
-            <EntryTextSmall></EntryTextSmall>
+            <EntryTextSmall 
+            name="episodeTotal"
+            type="number" 
+            role="input"
+            defaultValue={input.episodeTotal} 
+            onChange={handleInput}></EntryTextSmall>
         </EntryItem>
         <EntryItem>
             <EntryName>Status:</EntryName>
-            <EntryDrop>
+            <EntryDrop 
+            name="status"
+            defaultValue={input.status} 
+            onChange={handleInput}>
                 <option value="Watching">Watching</option>
                 <option value="Completed">Completed</option>
                 <option value="On-Hold">On-Hold</option>
@@ -35,7 +62,10 @@ function Entry() {
         </EntryItem>
         <EntryItem>
             <EntryName>Score:</EntryName>
-            <EntryDrop>
+            <EntryDrop 
+            name="score"
+            defaultValue={input.score} 
+            onChange={handleInput}>
                 <option value="10">10</option>
                 <option value="9">9</option>
                 <option value="8">8</option>
@@ -49,7 +79,8 @@ function Entry() {
             </EntryDrop>
         </EntryItem>
         <EntryButtonContainer>
-            <EntrySubmit>Submit</EntrySubmit>
+            <EntrySubmit 
+            type="submit" onClick={(e) => addWatchlist(e)}>Submit</EntrySubmit>
         </EntryButtonContainer>
     </EntryContainer>
   );
