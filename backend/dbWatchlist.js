@@ -25,11 +25,3 @@ const watchlistSchema = mongoose.Schema(
 )
 
 module.exports = mongoose.model('watchlist', watchlistSchema);
-
-/*
-title: "",
-    episodeOn: "",
-    episodeTotal: "",
-    status: "",
-    score: ""
-    */
