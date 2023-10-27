@@ -37,6 +37,15 @@ import {
         }
     }
 
+    const formatDate = (date) => {
+        let strDate = String(date);
+        let year = strDate[0] + strDate[1] + strDate[2] + strDate[3];
+        let month = strDate[5] + strDate[6];
+        let day = strDate[8] + strDate[9];
+        let format = month + '/' + day + '/' + year;
+        return format;
+    }
+
       return (
         <IT>
             {/* <ITImgContainer>
@@ -73,7 +82,7 @@ import {
             <ITDateContainer>
                 <b>Date Created:</b>
                 <ITDate>
-                    08/28/2022
+                    {formatDate(watchlistData.watchlistData.createdAt)}
                 </ITDate>
             </ITDateContainer>
         </IT>

@@ -66,7 +66,7 @@ export const EntryTextSmall = styled.input`
     padding-left: 10px;
     padding-right: 10px;
     height: 30px;
-    width: 50px;
+    width: 100px;
     border-radius: 20px;
     color: var(--black);
     font-weight: 600;
